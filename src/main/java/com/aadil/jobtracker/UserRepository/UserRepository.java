@@ -1,27 +1,18 @@
 package com.aadil.jobtracker.UserRepository;
 
 import com.aadil.jobtracker.entity.UserEntity;
-
-import org.jetbrains.annotations.NotNull;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.security.core.userdetails.UserDetails;
 
-import java.util.Optional;
+import java.util.List;
 
 public interface UserRepository extends JpaRepository<UserEntity,Long> {
+
+    boolean existsByName (String name);
     boolean existsByEmail(String email);
-    boolean existsByName(String name);
 
-    boolean dtosExistsByName (List<String> name);
-    boolean dtosExistsByEmail (List<String> email);
+    List<UserEntity> findByEmailsIn (List<String> email);
 
-    Page<@NotNull UserEntity> findByNameContainingIgnoreCaseAndEmailContainingIgnoreCase(String name, String email, Pageable pageable);
-
-    Optional<UserEntity> findByEmail(String email);
-
-    Optional<UserEntity> findByName(String name);
-
+    Page<UserEntity> findNameContainingIgnoreCaseAndEmailContainingIgnoreCase (String name, String email, Pageable pageable);
 }
-

@@ -1,11 +1,11 @@
 package com.aadil.jobtracker.entity;
 
 import jakarta.persistence.*;
-import lombok.*;
-@Getter
-@Setter
+import lombok.Data;
+
 @Entity
-@Table(name = "users")
+@Table (name = "users")
+@Data
 public class UserEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
@@ -14,5 +14,4 @@ public class UserEntity {
     private String email;
     private String password;
     private String roles;
-
 }

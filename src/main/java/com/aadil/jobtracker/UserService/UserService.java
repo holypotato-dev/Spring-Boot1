@@ -11,22 +11,21 @@ import java.util.Optional;
 
 public interface UserService {
 
-    UserResponseDTO createUser(UserRequestDTO dto);
+    UserResponseDTO createUser (UserRequestDTO dto);
 
-    List<UserResponseDTO> createUsers(List<UserRequestDTO> dtos);
+    List<UserResponseDTO> createUsers (List<UserRequestDTO> dtos);
 
-    Optional<UserResponseDTO> getUser(Long id);
+    Optional<UserResponseDTO> getUser (Long id);
 
-    PagedResponse<UserResponseDTO> getAllUsers(String search, int page, int size, UserSortField sortField, SortDirection sortDirection);
+    Optional<List<UserResponseDTO>> getUsersById (List<Long>ids);
 
-    List<UserResponseDTO> getUsersById(List<Long> ids);
+    PagedResponse<UserResponseDTO> getAllUsers (String search,  int size,int pageNumber, UserSortField userSortField, SortDirection sortDirection);
 
-    Optional<UserResponseDTO> updateUser(Long id, UserRequestDTO dto);
+    Optional<UserResponseDTO> updateUser (Long id, UserRequestDTO dto);
 
-    void deleteUser(Long id);
+    void deleteUser (Long id,boolean confirm);
 
-    void deleteAll ();
+    void deleteAll(boolean confirm);
 
-   void deleteById (List<Long>ids);
-
+    void deleteById (List<Long>ids,boolean confirm);
 }

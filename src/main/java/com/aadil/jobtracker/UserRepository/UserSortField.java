@@ -1,1 +1,1 @@
-package com.aadil.jobtracker.UserRepository;import lombok.Getter;@Getterpublic enum UserSortField {    ID("id"),    NAME("name"),    EMAIL("email");    private final String userSortField;    UserSortField(String userSortField) {        this.userSortField = userSortField;    }}
+package com.aadil.jobtracker.UserRepository;import lombok.AllArgsConstructor;import lombok.Getter;@Getter@AllArgsConstructorpublic enum UserSortField {    ID("id"),    NAME("name"),    EMAIL("email");    private final String userSortField;}
