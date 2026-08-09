@@ -1,0 +1,1 @@
+package com.aadil.jobtracker.responses;import lombok.Data;import java.sql.Time;@Datapublic class APIResponse <T>{    private boolean status;    private String message;    private String code;    private T data;    private Time timeStamp;}
