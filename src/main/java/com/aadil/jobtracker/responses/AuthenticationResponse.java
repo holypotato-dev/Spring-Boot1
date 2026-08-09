@@ -1,1 +1,1 @@
-package com.aadil.jobtracker.responses;import lombok.Getter;@Getterpublic class AuthenticationResponse {    private final String token;    public AuthenticationResponse(String token) {        this.token = token;    }}
+package com.aadil.jobtracker.responses;import lombok.Getter;import lombok.NoArgsConstructor;import lombok.Setter;@Getter@Setter@NoArgsConstructorpublic class AuthenticationResponse {    private String code;    private String token;}
